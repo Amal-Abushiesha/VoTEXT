@@ -1,0 +1,70 @@
+ body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #343a40; /* Dark background color */
+            color: #f8f9fa; /* Light text color */
+        }
+
+        .navbar {
+            background-color: #343a40; /* Dark background color for navbar */
+            margin-bottom: 30px;
+        }
+
+        .table td,
+        .table th {
+            vertical-align: middle;
+            text-align: center;
+            color: #343a40; /* Dark text color for table */
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #6c757d; /* Darker background color for odd rows */
+        }
+
+        .table-striped tbody tr:nth-of-type(even) {
+            background-color: #f8f9fa; /* Lighter background color for even rows */
+        }
+
+        .summary-text {
+            position: relative;
+        }
+
+        .summary-full {
+            display: none;
+            white-space: normal;
+            color: #f8f9fa; /* Light text color for full summary */
+        }
+
+        .read-more {
+            color: #007bff; /* Link color */
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .actions {
+            text-align: center;
+        }
+
+        .delete-icon,
+        .download-icon {
+            font-size: 18px;
+            cursor: pointer;
+            color: #dc3545; /* Icon color */
+        }
+
+        .delete-icon:hover,
+        .download-icon:hover {
+            color: #ffc107; /* Hover color for icons */
+        }
+        .custom-margin {
+            margin-bottom: 20px; /* Adjust the margin value as needed */
+        }

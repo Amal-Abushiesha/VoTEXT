@@ -1,0 +1,314 @@
+.custom-div {
+    color: var(--white); /* Text color */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center items horizontally */
+}
+
+.form-group {
+    width: 100%;
+}
+
+.custom-form {
+}
+body.light-theme .Enter-link{
+    color: var(--dark);
+}
+
+.youtube-label {
+    width: 700px; /* Set width directly */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-family: 'Quicksand', sans-serif;
+    cursor: text;
+    margin: 0 auto;
+}
+body.light-theme .youtube-label{
+    color: var(--primary);
+}
+
+.youtube-label:focus {
+    border-color: var(--primary); /* Change border color when focused */
+    outline: none; /* Remove default focus outline */
+}
+
+.result-textbox {
+    width: calc(100% - 20px);
+    max-width: 100%;
+    height: 200px;
+    padding: 12px 10px;
+    font-size: 18px;
+    background-color: #e9ecef;
+    resize: none;
+    margin-top: 20px;
+    position: relative;
+    border: none; /* Remove default border */
+    border-top: 1px solid #ccc; /* Add top border */
+    border-bottom: 1px solid #ccc; /* Add top border */
+    outline: none; /* Remove default focus outline */
+}
+
+.rsult-div {
+    position: relative;
+    width: 100%; /* Make container div same width as textarea */
+    background-color: #e9ecef; /* Set background color */
+    padding: 20px 0px 25px; /* Add some padding */
+    border-radius: 10px 10px 0px 0px ; /* Add border radius for rounded corners */
+    margin-top: 30px;
+}
+.message {
+    position: fixed;
+    font-size: 12px;
+    background-color: rgba(248, 249, 250, 0.7);
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out; /* Apply transition for smooth disappearance */
+    opacity: 1;
+}
+
+.message.hide {
+    opacity: 0;
+}
+.response-word {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--dark)
+}
+
+.clear-word {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    cursor: pointer;
+    color:#007bff;
+}
+
+.copy-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.user-history {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    cursor: pointer;
+    color: #007bff; /* Primary color, blue */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+
+
+
+.btn-primary {
+    margin-top: 20px; /* Add margin top for spacing */
+}
+
+.service-title{
+    margin-top: 20px;
+}
+.sign-in-btn {  
+    background-color: var(--primary); /* Red background color */
+    padding: 5px 10px; /* Reduce padding */
+    border-radius: 30px;
+    color: var(--white);
+}
+
+.sign-in-btn:hover {
+    background-color: var(--primary); /* Keep the same background color during hover */
+}
+
+
+.modal-header,
+.modal-title {
+  color: #007bff; /* Blue color */
+}
+
+.modal-content {
+  background-color: rgba(240, 240, 240, 0.7) !important; /* Background color with opacity */
+  border-radius: 10px !important; /* Adjust border radius as needed */
+}
+
+.modal-body {
+  padding: 1rem;
+}
+#signinModal .modal-body a {
+  color: black;
+}
+.dark-mode .theme-icon {
+    /* Specific styles for the icon in dark mode */
+    /* For example, if the icon is white in dark mode */
+    filter: brightness(0) invert(1);
+}
+
+.light-mode .theme-icon {
+    /* Specific styles for the icon in light mode */
+    /* For example, if the icon is black in light mode */
+    filter: brightness(0) invert(0);
+}
+
+/*style for progress circles*/
+
+
+    .progress-comments{
+        display: none; /* Initially hidden */
+        height: 40vh;
+        align-items: center;
+        justify-content: center;
+    }
+.skill{
+    width: 160px;
+    height: 160px;
+    margin-right: 20px; /* Added margin to separate the skill bars */
+    position: relative;
+    box-sizing: border-box;
+
+}
+.outer {
+    box-sizing: border-box;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.4),
+                -10px -10px 20px -8px rgba(255, 255, 255, 0.1);
+
+}
+
+.inner {
+    box-sizing: border-box;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: inset 6px 6px 12px -6px rgba(0, 0, 0, 0.4),
+                inset -6px -6px 12px -6px rgba(255, 255, 255, 0.1),
+                -1px -1px 2px rgba(0, 0, 0, 0.1),
+                1px 1px 2px rgba(255, 255, 255, 0.3),
+                inset 0px 12px 10px -10px rgba(0, 0, 0, 0.5);
+}
+body.light-theme .outer{
+    box-sizing: border-box;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+body.light-theme .inner{
+    box-sizing: border-box;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+                inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+                -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+               inset 0px 12px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+.number{
+    box-sizing: border-box;
+    font-weight: 600;
+    color: #f8f9fa;
+}
+circle{
+    box-sizing: border-box;
+
+    fill: none;
+    stroke: #007bff; /* Change to the desired color */
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+}
+svg{
+    box-sizing: border-box;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes smoothAnim {
+    0% {
+        stroke-dashoffset: 472;
+    }
+    100% {
+        stroke-dashoffset: 0; 
+    }
+}
+
+/* Tablet and Phone styles */
+@media only screen and (max-width: 1024px) {
+    .youtube-label {
+        width: 400px; /* Decrease width of text container */
+        height: 60px; /* Increase height of text container */
+    }
+
+    .custom-textarea-wrapper {
+        width: 400px; /* Decrease width of textarea wrapper */
+        height: auto; /* Allow height to adjust */
+        margin: 0 auto;
+        margin-bottom:60px;
+    }
+
+    .result-textbox {
+        height: 150px; /* Increase height of result textbox */
+    }
+
+    .progress-comments {
+        flex-direction: column; /* Arrange circles below each other */
+        align-items: center; /* Center circles horizontally */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .skill {
+        margin-right: 0; /* Remove margin between circles */
+        margin-bottom: 25px; /* Add space between circles */
+        margin-top:20px;
+    }
+}
+@media only screen and (max-width: 720px) {
+    .youtube-label {
+        width: 300px; /* Decrease width of text container */
+        height: 60px;
+         /* Increase height of text container */
+    }
+    .custom-textarea-wrapper {
+        width: 300px; /* Decrease width of textarea wrapper */
+        height: auto; /* Allow height to adjust */
+        margin-bottom:60px;
+    }
+
+
+}
+/*loading progrees untill displaying the result*/
+.additional-info {
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #6c757d;
+    margin-top: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
