@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History Page with Bootstrap</title>
+    <link rel="stylesheet" href="assets/css/History.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand mx-auto" href="index.html"> <!-- Change the href to your index page URL -->
+                <img src="assets/imgs/gray-icon.png" class="img-fluid" style="width: 36px;">
+            </a>
+        </div>
+    </nav>
+    
+    <!-- End Navbar -->
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h2 class="mb-4">View Your Recent Activities</h2>
+        </div>
+    </div>
+    
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">Record Number</th>
+                    <th style="width: 15%;">Date</th>
+                    <th style="width: 15%;">Link</th>
+                    <th style="width: 30%;">Summarized Result</th>
+                    <th style="width: 10%;">Negative</th>
+                    <th style="width: 10%;">Neutral</th>
+                    <th style="width: 10%;">Positive</th>
+                    <th style="width: 10%;">Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/History.js"></script>
+</body>
+</html>

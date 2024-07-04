@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Dorang landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Votext | Streamlined YouTube Video Summarization Service</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Icon -->
+    <link rel="icon" type="image/png" href="assets/imgs/dark-icon.png">
+
+    <!-- Bootstrap + Dorang main styles -->
+	<link rel="stylesheet" href="assets/css/dorang.css">
+	<link rel="stylesheet" href="assets/css/summarize.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init('U9sqjSAKRAdEkTg9P'); // Initialize EmailJS with your User ID
+        })();
+    </script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
+    
+    <!-- page navbar -->
+   <!-- page navbar -->
+<nav class="page-navbar" data-spy="affix" data-offset-top="10">
+    <ul class="nav-navbar container">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" id="summarizeLink">Summarize</a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><img src="assets/imgs/gray-icon.png" class="img-fluid"></a></li>
+        <li class="nav-item"><a href="#" class="nav-link" id="servicesLink">Services</a></li>
+        <li class="nav-item" id="signInNavItem">
+            <a href="#" class="btn btn-custom sign-in-btn" data-toggle="modal" data-target="#signinModal">Sign In</a>
+        </li>
+    </ul>
+</nav><!-- end of page navbar -->
+
+<!-- Sign In Modal -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-primary" id="signinModalLabel">Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-custom text-center">
+          <!-- Sign In Form -->
+          <form id="signin-form">
+            <div class="form-group">
+              <label for="email" class="text-primary">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="password" class="text-primary">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary" id="signin-submit-btn">
+                <span id="signin-submit-text">Sign In</span>
+                <span class="spinner-border spinner-border-sm d-none" id="signin-loading-icon" role="status" aria-hidden="true"></span>
+              </button>
+                      </form>
+          <div class="mt-2">
+            <p><a href="#" data-toggle="modal" data-target="#signupModal" data-dismiss="modal">sign up here</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-primary" id="signupModalLabel">Sign Up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-custom text-center">
+          <!-- Sign Up Form -->
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="signup_email" class="text-primary">Email address</label>
+              <input type="email" class="form-control" name="signup_email" id="signup_email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="signup_password" class="text-primary">Password</label>
+              <input type="password" class="form-control" name="signup_password" id="signup_password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="confirm_password" class="text-primary">Confirm Password</label>
+              <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password">
+            </div>
+            <button type="submit" class="btn btn-primary" id="signup-submit-btn">
+                <span id="signup-submit-text">Sign Up</span>
+                <span class="spinner-border spinner-border-sm d-none" id="signup-loading-icon" role="status" aria-hidden="true"></span>
+              </button>          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!--end of sign up-->
+    <div class="theme-selector">
+        <a href="javascript:void(0)" class="spinner">
+            <i class="ti-paint-bucket"></i>
+        </a>
+        <div class="body">
+            <a href="javascript:void(0)" class="light"></a>
+            <a href="javascript:void(0)" class="dark"></a>
+        </div>
+    </div>  
+
+    <!-- page header -->
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1 class="header-title">Votext Summarizes Videos</h1>
+            <p class="header-subtitle">Discover the power of Votext,
+                where complex videos are effortlessly condensed into digestible summaries</p>
+
+            <button id="summarizeBtn" class="btn btn-theme-color "><i class="ti-control-play text-danger"></i> Summarize Video</button>
+
+        </div>
+    </header><!-- end of page header -->
+
+    <!-- page container -->
+        <!-- Result summarize div -->
+    <div class="container page-container" id="formContainer" style="display: none; opacity: 0; transition: opacity 0.3s ease;">
+        <div class="custom-div text-center">
+            <form class="custom-form" id="youtube-form">
+                    <div class="form-group container">
+                        <label class="Enter-link" for="youtube_link">Enter Youtube link:</label>
+                        <div class="youtube-label form-control  " contenteditable="true" id="youtube_link"></div>
+                    </div>
+                    <div class="summarizebutton">
+                        <button id="summarizebutton" type="button" class="btn btn-primary" onclick="processsummarize()">Summarize</button>
+                    </div>
+                    <div class="additional-info" id="loading-summarize" style="text-align: center;"></div>
+
+                   <div class="custom-textarea-wrapper">
+                     <div class="rsult-div">
+                        <span class="response-word">Response</span>
+                        <span class="copy-icon" onclick="copyText()">&#128203;</span>
+                            <textarea id="result" class="result-textbox mt-3" ></textarea>
+                        <span class="clear-word" onclick="clearText()">Clear</span>
+                         <span class="user-history" onclick="goToHistoryPage()">User History</span>
+                      </div>
+                      <div id="messageElement" class="message"></div>
+                    </div>
+                    <div class="submit-button">
+                        <button id="submitbutton" type="button" class="btn btn-primary" onclick="processYouTubeLink()">Analysis Comments</button>
+                    </div>
+                        <div class="additional-info" id="loadingText" style="text-align: center;"></div>
+<!-- Progress circles for analysis results -->
+    <div class="progress-comments" id="progress-circles">
+        <div class="skill">
+            <div class="outer">
+                <div class="inner">
+                    <div class="number" id="p1"></div>  <!-- Positive comments percentage -->
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                    <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#e91e63" />
+                        <stop offset="100%" stop-color="#673ab7" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />  <!-- Stroke circle for positive -->
+            </svg>
+            <h5>Positive</h5>
+        </div>
+        <div class="skill">
+            <div class="outer">
+                <div class="inner">
+                    <div class="number" id="p2"></div>  <!-- Neutral comments percentage -->
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                    <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#e91e63" />
+                        <stop offset="100%" stop-color="#673ab7" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />  <!-- Stroke circle for neutral -->
+            </svg>
+            <h5>Neutral</h5>
+        </div>
+        <div class="skill">
+            <div class="outer">
+                <div class="inner">
+                    <div class="number" id="p3"></div>  <!-- Negative comments percentage -->
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                    <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#e91e63" />
+                        <stop offset="100%" stop-color="#673ab7" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />  <!-- Stroke circle for negative -->
+            </svg>
+            <h5>Negative</h5>
+        </div>
+    </div>
+                <!--end of progress-->
+            </form>
+        </div>
+    </div>
+        
+    <div class="container page-container" id="servicesSection">
+        <div class="col-md-10 col-lg-8 m-auto">
+            <h6 class="title mb-4 service-title">Efficient Video Summarization</h6>
+            <p class="mb-5">Votext's video summarization service revolutionizes the way educational content is consumed.
+                Whether you're a student seeking efficient study aids or a professor looking to provide concise materials,
+                Votext simplifies the process. Enjoy the benefits of rapid, accurate summarization, allowing for quicker comprehension,
+                enhanced learning, and improved productivity for all stakeholders in the educational journey.
+            </p>
+        </div>  
+
+        <!-- row -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <a href="javascript:void(0)" class="overlay-img">
+                    <img src="assets/imgs/student.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, weber Landing page">
+                    <div class="overlay"></div> 
+                    <div class="des">
+                        <h1 class="title">Smart Learning</h1>
+                        <h6 class="subtitle">Efficiency Boost</p>
+                        <p>Votext revolutionizes learning with concise YouTube video summaries tailored for students.
+                            Accessible, time-efficient education at your fingertips
+                        </p>
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="javascript:void(0)" class="overlay-img">
+                    <img src="assets/imgs/education.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, weber Landing page">
+                    <div class="overlay"></div> 
+                    <div class="des">
+                        <h1 class="title">Teach Ease </h1>
+                        <h6 class="subtitle">Engagement Boost</p>
+                        <p>Votext empowers educators with engaging, customized learning materials.
+                            Enhance classroom experiences, save time, and inspire students
+                        </p>
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="javascript:void(0)" class="overlay-img">
+                    <img src="assets/imgs/teacher.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, weber Landing page">
+                    <div class="overlay"></div> 
+                    <div class="des">
+                        <h1 class="title">Education Empower</h1>
+                        <h6 class="subtitle">Knowledge Amplified</p>
+                        <p>Votext delivers essential insights from YouTube videos, streamlining research and presentation preparation.
+                            Work smarter, achieve more with Votext.
+                        </p>
+                    </div>          
+                </a>
+            </div>
+
+        </div><!-- end of row -->
+    </div> <!-- end of page container -->
+
+    <!--footer & pre footer -->
+    <div class="contact-section">
+        <div class="overlay"></div>
+        <!-- container -->
+        <div class="container">
+            <div class="col-md-10 col-lg-8 m-auto">
+                <h6 class="title mb-2">Contact Us</h6>
+                <p class="mb-5">Feel Free To Drop Us A Line.</p>
+                <form action="" class="form-group">
+                    <input type="text" id="name" size="50" class="form-control" placeholder="Your Name" required>
+                    <input type="email" id="email" class="form-control" placeholder="Enter Email"requried>
+                    <textarea name="comment" id="message" rows="6"   class="form-control" placeholder="Write Something"></textarea>
+                    <input onclick="sendMail()" type="button" value="Send Message" class="form-control">
+                </form>
+            </div>
+    
+            <!-- footer -->
+            <footer class="footer">
+                <p class="infos">&copy; <script>document.write(new Date().getFullYear())</script>, Made with <i class="ti-heart text-danger"></i> by <a href="">Votext</a></p>
+                <span>|</span>  
+                <div class="links">
+                    <a href="#">Home</a>
+                    <a href="#" id="summarizefooter">Summarize</a>
+                    <a href="#" id="servicesfooter">Service</a>
+                    <a href="History.html" id="History">History</a>
+                </div>
+            </footer><!-- end of footer -->
+
+        </div><!-- end of container -->
+    </div><!-- end of pre footer -->
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Dorang js -->
+    <script src="assets/js/dorang.js"></script>
+    <script src="assets/js/summarize.js"></script>
+    <script src="assets/js/progress.js"></script>
+    <script src="assets/js/History.js"></script>
+    <script src="assets/js/login-signup.js"></script>
+    <script src="assets/js/back_summarize.js"></script>
+    <script src="assets/js/Token.js"></script>
+    <script src="assets/js/Handling_Errors.js"></script>
+
+    <!--    sign-in and sign-up page-->
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    function checkTokenExpiration() {
+        const authToken = localStorage.getItem('authToken'); // Retrieve the token
+
+        if (!authToken) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Session expired',
+                text: 'Please log in again.',
+                confirmButtonText: 'Login'
+            }).then(() => {
+                $('#signinModal').modal('show'); // Show sign-in modal for re-authentication
+            });
+            return true; // Indicates that re-authentication is required
+        }
+
+        return false; // Token is valid
+    }
+    </script>
+
+    function sendMail() {
+        var params = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value,
+        };
+    
+        const serviceID = "service_477r7b1"; // Your EmailJS service ID
+        const templateID = "template_wu03azp"; // Your EmailJS template ID
+    
+        emailjs.send(serviceID, templateID, params)
+            .then(res => {
+                document.getElementById("name").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("message").value = "";
+                console.log(res);
+                alert("Your message was sent successfully!!");
+            })
+            .catch(err => console.log(err));
+    }
+
+</body>
+</html>
