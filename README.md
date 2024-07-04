@@ -16,3 +16,6 @@ VOTEXT addresses the pressing issue of information overload by offering a revolu
 The core functionality of VOTEXT revolves around its ability to segment videos by topics and provide timestamps for each part of the summary. This feature allows users to jump directly to the sections of the video that are of interest to them, thereby saving time and enhancing the overall viewing experience. By breaking down videos into manageable segments, VOTEXT makes it easier for users to digest and retain information, leading to more efficient knowledge acquisition.
 
 ### Join VOTEXT today and transform the way you interact with video content. Make every minute of your video-watching experience count!
+#### READ MORE ABOUT VOTEXT: https://drive.google.com/drive/folders/1iH2Imb_xuo0xm5iM0ZvC5a7egUX4Jhze?usp=drive_link
+![Picture2](https://github.com/Amal-Abushiesha/VoTEXT/assets/81009248/b9426b12-4b61-4f20-b760-cb85af31d727)
+
