@@ -1,0 +1,13 @@
+uvicorn
+html
+unicodedata
+string
+nltk
+jax
+os
+time
+regex  # For the 're' module (the library name is 'regex' in pip)
+google.generativeai
+requests
+json
+textwrap
